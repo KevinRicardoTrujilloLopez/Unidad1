@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title> 
+	<style type="text/css">
+		canvas{
+			background-color: gray;
+		}
+	</style>
+</head>
+<body>
+	
+	<canvas id="my_canvas" width="500" height="500"></canvas>
+
+	<script type="text/javascript">
+		const my_canvas = document.getElementById('my_canvas')
+		const ctx = my_canvas.getContext('2d');
+
+		ctx.strokeRect(20,20,100,100)
+
+		ctx.fillStyle="blue"
+		ctx.fillRect(100,100,100,100)
+
+		ctx.fillStyle="#E377E7"
+		ctx.fillRect(180,180,100,100)
+
+		ctx.fillStyle="rgba(153, 231, 119,0.5)"
+		ctx.fillRect(260,260,100,100)
+
+		ctx.lineWidth = 4;
+		ctx.strokeStyle="blue"
+		ctx.strokeRect(340,340,100,100);
+
+        ctx.beginPath();
+		ctx.moveTo(400,20);
+		ctx.lineTo(200,20);
+		ctx.lineTo(300,100);
+		ctx.closePath();
+		ctx.stroke()
+		ctx.fill()
+        
+    ctx.beginPath();
+    ctx.arc(150, 425, 50, 0, 2 * Math.PI);
+    ctx.fillStyle = "orange";
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(100, 425, 50, 0, 2 * Math.PI);
+    ctx.stroke();
+	
+	   ctx.beginPath();
+    ctx.arc(260, 425, 50, 0.5, 1.2* Math.PI);
+    ctx.stroke();
+
+	ctx.font =" 48px Gabriola";
+        ctx.fillText("Hola mundo", 150 , 60 );
+        ctx.strokeStyle = "#8AFF64";
+        ctx.strokeText("Hola mundo",10,360);
+
+	</script>
+</body>
+</html>
