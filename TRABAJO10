@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style> #mycanvas{
+        background-color: white;
+    }
+    body{
+        background-color: black;
+    }
+ 
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <canvas id="mycanvas" width="500" height="500" >
+        
+    </canvas>
+</head>
+
+<body>
+    <script>
+        var canvas = document.getElementById('mycanvas');
+         var ctx = canvas.getContext('2d');
+
+         
+
+         canvas.addEventListener("mouseover",(e) => {
+            console.log("mouseover")
+            console.log(e)
+            var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+            ctx.beginPath();
+            ctx.fillStyle = randomColor;
+           
+         })
+         canvas.addEventListener("mousedown",(e) => {
+            console.log("mousedown")
+            console.log(e)
+
+            ctx.beginPath();
+            ctx.arc(e.layerX,e.layerY,50, 0,2 * Math.PI);
+            ctx.fill();
+            ctx.stroke();
+         })
+
+
+      
+
+   
+    </script>
+    
+</body>
+</html>
