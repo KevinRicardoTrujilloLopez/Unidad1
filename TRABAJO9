@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style> #mycanvas{
+        background-color: white;
+    }
+    body{
+        background-color: black;
+    }
+ 
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <canvas id="mycanvas" width="500" height="500" >
+        
+    </canvas>
+</head>
+
+<body>
+    <script>
+        var canvas = document.getElementById('mycanvas');
+         var ctx = canvas.getContext('2d');
+
+         canvas.addEventListener("mousedown",(e) => {
+            console.log("mousedown")
+            console.log(e)
+
+            ctx.beginPath();
+            ctx.fillStyle ="rgba(13,214,242,0.5)";
+            ctx.arc(e.layerX,e.layerY,50, 0,2 * Math.PI);
+            ctx.fill();
+            ctx.stroke();
+         })
+   
+    </script>
+    
+</body>
+</html>
