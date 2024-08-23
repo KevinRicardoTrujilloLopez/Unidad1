@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style> #mycanvas{
+        background-color: white;
+    }
+    body{
+        background-color: black;
+    }
+ 
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <canvas id="mycanvas" width="500" height="500" >
+        
+    </canvas>
+</head>
+
+<body>
+    <script>
+        var canvas = document.getElementById('mycanvas');
+         var ctx = canvas.getContext('2d');
+         var mouseOutCheck = false;
+         
+
+         canvas.addEventListener("mouseover",(e) => {
+            console.log("mouseover")
+            console.log(e)
+            var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+            ctx.beginPath();
+            ctx.fillStyle = randomColor;
+         
+         })
+         canvas.addEventListener("mousedown",(e) => {
+            console.log("mousedown")
+            console.log(e)
+           
+            ctx.beginPath();
+            if(mouseOutCheck==true){
+                 ctx.arc(e.layerX,e.layerY,50, 0,2 * Math.PI);
+               
+                 ctx.fill();
+            ctx.stroke();
+            ctx.fillStyle = randomColor;
+            }else{
+                ctx.fillRect(e.layerX-50,e.layerY-50,100,100,200);
+                
+
+                ctx.fill();
+            ctx.stroke();
+            ctx.fillStyle = randomColor;
+            }
+        
+         })
+
+         canvas.addEventListener("mouseout",(e) => {
+            console.log("mouseout")
+            console.log(e)
+            if(mouseOutCheck == false){
+                mouseOutCheck = true;
+            }else{
+                mouseOutCheck = false;
+            }
+
+         })
+
+         canvas.addEventListener("mousemove",(e) => {
+            console.log("mousemove")
+            console.log(e)
+            ctx.beginPath();
+            ctx.fillRect(e.layerX,e.layerY,10,10,200);
+            ctx.fill();
+            ctx.stroke();
+        
+            
+         })
+
+      
+
+   
+    </script>
+    
+</body>
+</html>
