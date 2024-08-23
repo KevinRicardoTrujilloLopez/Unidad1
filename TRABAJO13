@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style> 
+        #mycanvas {
+            background-color: white;
+        }
+        body {
+            background-color: black;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <canvas id="mycanvas" width="500" height="500"></canvas>
+</head>
+<body>
+    <script>
+        var canvas = document.getElementById('mycanvas');
+        var ctx = canvas.getContext('2d');
+        var dibujando = false;  
+        var mouseOutCheck = false;
+        var randomColor = '#000000'; 
+
+        function getRandomColor() {
+            return '#' + Math.floor(Math.random() * 16777215).toString(16);
+        }
+
+        canvas.addEventListener("mousedown", (e) => {
+            console.log("mousedown");
+            console.log(e);
+            dibujando = true;  
+            randomColor = getRandomColor(); 
+            ctx.beginPath();
+            ctx.fillStyle = randomColor;
+            
+            if (mouseOutCheck) {
+                ctx.arc(e.layerX, e.layerY, 50, 0, 2 * Math.PI);
+                ctx.fill();
+            } else {
+                ctx.fillRect(e.layerX - 50, e.layerY - 50, 100, 100);
+                ctx.fill();
+            }
+        });
+
+        canvas.addEventListener("mouseup", () => {
+            console.log("mouseup");
+            dibujando = false; 
+        });
+
+        canvas.addEventListener("mousemove", (e) => {
+            if (dibujando) {
+                console.log("mousemove");
+                console.log(e);
+                ctx.beginPath();
+                ctx.fillStyle = randomColor;
+                ctx.fillRect(e.layerX, e.layerY, 10, 10);
+                ctx.fill();
+            }
+        });
+        canvas.addEventListener("mouseout", (e) => {
+            console.log("mouseout");
+            console.log(e);
+            mouseOutCheck = !mouseOutCheck;
+        });
+    </script>
+</body>
+</html>
