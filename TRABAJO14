@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+        background-color: black;
+    }
+    </style>
+     <canvas id="myCanvas" width="500" height="500"> </canvas>
+</head>
+
+<body>
+ 
+    
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+        var x = 225, y = 225; 
+        
+
+        document.addEventListener("keydown", (e) => {
+            if (e.keyCode == 87) {
+                y -= 10;
+            }
+            if (e.keyCode == 83) {
+                y += 10;
+            }
+            if (e.keyCode == 65) {
+                x -= 10;
+            }
+            if (e.keyCode == 68) {
+                x += 10;
+            }
+            update(); 
+        });
+
+        
+            ctx.fillStyle = "blue";
+            ctx.fillRect(x, y, 50, 50);
+
+      
+         function update() {
+            ctx.fillStyle = "white";
+            ctx.fillRect(0, 0, 500, 500)
+
+            ctx.fillStyle = "blue";
+            ctx.fillRect(x, y, 50, 50);
+        }
+
+       
+    </script>
+</body>
+</html>
