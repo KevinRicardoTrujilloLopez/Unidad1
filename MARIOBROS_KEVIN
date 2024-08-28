@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Img Mario</title>
+</head>
+<body>
+ 
+    <canvas id="myCanvas" width="750" height="500"></canvas>
+
+
+    <img id="mario" src="MarioB.png" alt="" style="display: none;">
+
+
+    <script>
+          
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+    
+        ctx.fillStyle = "#87CEEB";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "#BD3E0B";
+        ctx.fillRect(0,450, 750,50 );
+
+        
+
+        ctx.fillStyle = "blue";
+        ctx.fillRect(280, 220, 150, 230);
+        ctx.fillStyle = "black";
+        ctx.fillRect(280, 220, 150, 5);
+        
+        ctx.fillStyle = "black";
+        ctx.fillRect(280, 220, 5, 230);
+         
+        ctx.fillStyle = "black";
+        ctx.fillRect(430, 220, 5, 230);
+  
+  
+       
+        ctx.fillStyle = "red";
+        ctx.fillRect(150, 300, 150, 150);
+        ctx.fillStyle = "black";
+        ctx.fillRect(300, 300, 5, 150);
+        ctx.fillStyle = "black";
+        ctx.fillRect(150, 300, 5, 150);
+        ctx.fillStyle = "black";
+        ctx.fillRect(150, 300, 150, 5);
+
+        ctx.fillStyle = "green";
+        ctx.fillRect(500, 340, 90, 110);
+        ctx.fillStyle = "black";
+        ctx.fillRect(500, 340, 5, 110);
+        ctx.fillStyle = "black";
+        ctx.fillRect(590, 340, 5, 110);
+
+
+
+
+
+        ctx.fillStyle = "green";
+        ctx.fillRect(490, 320, 110, 50);
+        ctx.fillStyle = "black";
+        ctx.fillRect(490, 320, 5, 50);
+    ctx.fillStyle = "black";
+        ctx.fillRect(490, 320, 110, 5);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect(600, 320, 5, 50);
+
+        ctx.fillStyle = "green";
+        ctx.fillRect(635, 300, 200, 150);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect(635, 300, 200, 5);
+        ctx.fillStyle = "black";
+        ctx.fillRect(635, 300, 5, 150);
+
+        ctx.fillStyle = "#FA5918";
+        ctx.fillRect(200, 50, 60, 60);
+        ctx.fillStyle = "#FA5918";
+        ctx.fillRect(270, 50, 60, 60);
+        ctx.fillStyle = "#FA5918";
+        ctx.fillRect(30,200, 60, 60);
+
+        ctx.fillStyle = "#FA5918";
+        ctx.fillRect(650,100, 60, 60);
+
+
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+  ctx.arc(35, 205, 3, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.arc(87, 205, 3, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.arc(35, 255, 3, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.arc(87, 255, 3, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.beginPath();
+
+
+
+  ctx.beginPath();
+        ctx.fillStyle = "black";
+  ctx.arc(205, 55, 3, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.beginPath();
+        ctx.fillStyle = "black";
+  ctx.arc(255, 55, 3, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.beginPath();
+        ctx.fillStyle = "black";
+  ctx.arc(255, 105, 3, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.beginPath();
+        ctx.fillStyle = "black";
+  ctx.arc(205, 105, 3, 0, Math.PI * 2);
+  ctx.fill();
+
+
+
+
+
+  ctx.beginPath();
+        ctx.fillStyle = "black";
+  ctx.arc(275, 55, 3, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.beginPath();
+        ctx.fillStyle = "black";
+  ctx.arc(325, 55, 3, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.beginPath();
+        ctx.fillStyle = "black";
+  ctx.arc(325, 105, 3, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.beginPath();
+        ctx.fillStyle = "black";
+  ctx.arc(275, 105, 3, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.beginPath();
+        ctx.fillStyle = "black";
+  ctx.arc(655, 105, 3, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.beginPath();
+        ctx.fillStyle = "black";
+  ctx.arc(655, 155, 3, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.beginPath();
+        ctx.fillStyle = "black";
+  ctx.arc(705, 105, 3, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.beginPath();
+        ctx.fillStyle = "black";
+  ctx.arc(705, 155, 3, 0, Math.PI * 2);
+  ctx.fill();
+
+
+  ctx.beginPath();
+        ctx.fillStyle = "black";
+  ctx.arc(165, 315, 8, 0, Math.PI * 2);
+  ctx.stroke();
+
+  ctx.beginPath();
+        ctx.fillStyle = "black";
+  ctx.arc(290, 315, 8, 0, Math.PI * 2);
+  ctx.stroke();
+
+  ctx.beginPath();
+        ctx.fillStyle = "black";
+  ctx.arc(290, 440, 8, 0, Math.PI * 2);
+  ctx.stroke();
+
+  ctx.beginPath();
+        ctx.fillStyle = "black";
+  ctx.arc(165, 440, 8, 0, Math.PI * 2);
+  ctx.stroke();
+
+  ctx.beginPath();
+        ctx.fillStyle = "black";
+  ctx.arc(420, 440, 8, 0, Math.PI * 2);
+  ctx.stroke();
+  ctx.beginPath();
+        ctx.fillStyle = "black";
+  ctx.arc(420, 235, 8, 0, Math.PI * 2);
+  ctx.stroke();
+
+  ctx.beginPath();
+        ctx.fillStyle = "black";
+  ctx.arc(295, 235, 8, 0, Math.PI * 2);
+  ctx.stroke();
+
+  ctx.beginPath();
+        ctx.fillStyle = "black";
+  ctx.arc(650, 315, 8, 0, Math.PI * 2);
+  ctx.stroke();
+  ctx.beginPath();
+        ctx.fillStyle = "black";
+  ctx.arc(650, 440, 8, 0, Math.PI * 2);
+  ctx.stroke();
+  ctx.beginPath();
+
+    //var imagen = document.getElementById("mario");
+    //ctx.drawImage(imagen,100,100,100,100);
+
+   
+
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+  
+
+
+    
+    </script>
+</body>
+</html>
