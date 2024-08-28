@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Avatar</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="300" height="300"></canvas>
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+
+
+         var grd1 = ctx.createLinearGradient(0, 0, 0, canvas.height);
+         grd1.addColorStop(0, "#87CEEB");
+        grd1.addColorStop(1, "#1E8449");
+        ctx.fillStyle = grd1;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+
+        ctx.beginPath();
+        ctx.arc(100, 100, 60, 0, 2 * Math.PI);
+        ctx.fillStyle = "#ffccaa"; 
+        ctx.fill();
+       
+        ctx.beginPath();
+        ctx.arc(75, 80, 8, 0, 2 * Math.PI);
+        ctx.arc(125, 80, 8, 0, 2 * Math.PI);
+        ctx.fillStyle = "#333"; 
+        ctx.fill();
+        
+        ctx.beginPath();
+        ctx.rect(60, 160, 80, 70);
+        var grd =  ctx.createLinearGradient(65, 165, 135, 215);
+        grd.addColorStop(0, "#426696");
+        grd.addColorStop(1, "#FA0000");
+        ctx.fillStyle = grd;
+        ctx.fill();
+      
+        ctx.beginPath();
+        ctx.moveTo(60, 160);
+        ctx.lineTo(20, 120);
+        ctx.moveTo(140, 160);
+        ctx.lineTo(180, 120);
+        ctx.strokeStyle = "#ffccaa";
+        ctx.lineWidth = 15;
+        ctx.stroke();
+    
+        ctx.beginPath();
+        ctx.moveTo(80, 230);
+        ctx.lineTo(60, 300); 
+        ctx.moveTo(120, 230);
+        ctx.lineTo(140, 300); 
+        ctx.strokeStyle = "#333"; 
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(100, 110, 30, 0.2 * Math.PI, 0.8 * Math.PI);
+        ctx.strokeStyle = "#333";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.rect(40, 290, 40, 10);
+        ctx.rect(120, 290, 40, 10); 
+        ctx.fillStyle = "#5f4339"; 
+        ctx.fill();
+    
+    </script>
+</body>
+</html>
