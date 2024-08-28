@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>sonic</title>
+</head>
+<body>
+    <canvas id="miCanvas" width="800" height="600"></canvas>
+    <script>
+    
+        var canvas = document.getElementById("miCanvas");
+        var ctx = canvas.getContext("2d");
+
+      
+        ctx.fillStyle = "darkblue";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      
+        ctx.beginPath();
+        ctx.strokeStyle = "yellow";
+        ctx.lineWidth = 3;
+        ctx.arc(180, 450, 30, 0, Math.PI * 2 );
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(250, 450, 30, 0, Math.PI * 2);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(315, 450, 30, 0, Math.PI * 2);
+        ctx.stroke();
+
+      
+        ctx.fillStyle = "green";
+      
+        ctx.fillRect(0, 500, canvas.width, 30);
+        ctx.beginPath();
+        ctx.fillStyle = "brown";
+        ctx.fillRect(0, 520, canvas.width, 150);
+
+     
+        ctx.lineWidth = 60;
+        ctx.strokeStyle = "yellow";
+        ctx.beginPath();
+        ctx.arc(700, 375, 30, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.fillStyle="gray";
+        ctx.fill();
+
+        ctx.beginPath();
+            ctx.fillStyle="#14FF08";
+        ctx.fillRect(685,405,30,95,);
+
+        ctx.fillStyle = "#C26D0D";
+        for (var i = 0; i < canvas.width; i += 40) {
+            for (var j = 520; j < canvas.height; j += 20) {
+                ctx.fillRect(i, j, 25, 15);
+            }
+        }
+        ctx.fillStyle = "#9B570A";
+        ctx.fillRect(50, 200, 30, 300);
+
+        ctx.fillStyle = "green";
+        ctx.beginPath();
+        ctx.moveTo(1, 10);
+        ctx.lineTo(10, 200);
+        ctx.lineTo(200, 200);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = "#9B570A";
+        ctx.fillRect(350, 200, 30, 300);
+
+        ctx.fillStyle = "green";
+        ctx.beginPath();
+        ctx.moveTo(360, 10);
+        ctx.lineTo(305, 200);
+        ctx.lineTo(420, 200);
+        ctx.closePath();
+        ctx.fill();
+
+
+     
+</script>
+    </script>
+</body>
+</html>
