@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paisaje</title>
+<style>
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #87CEEB; 
+  }
+  canvas {
+    border: 2px solid black;
+  }
+</style>
+</head>
+<body>
+<canvas id="paisajeCanvas" width="700" height="700"></canvas>
+<script>
+  const canvas = document.getElementById("paisajeCanvas");
+  const ctx = canvas.getContext("2d");
+ 
+  ctx.fillStyle = "#87CEEB";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  
+  ctx.fillStyle = "#00FF00";
+  ctx.fillRect(0, 500, canvas.width, canvas.height - 500);
+  
+  ctx.fillStyle = "#FFFF00";
+  ctx.beginPath();
+  ctx.arc(600, 100, 50, 0, Math.PI * 2);
+  ctx.fill();
+  
+  ctx.fillStyle = "#FFD700"; 
+  ctx.fillRect(200, 300, 300, 300);
+  
+  ctx.fillStyle = "#9C6D0F";
+  ctx.fillRect(300, 500, 100, 100);
+  
+  ctx.fillStyle = "#9C6D0F"; 
+  ctx.fillRect(210, 350, 70, 70);
+  ctx.fillRect(420, 350, 70, 70);
+
+  ctx.fillStyle = "#8B0000"; 
+  ctx.fillRect(390, 220, 30, 80);
+  ctx.fillRect(380, 200, 50, 20);
+
+  ctx.fillStyle = "#FFFFFF";
+  ctx.beginPath();
+  ctx.arc(200, 100, 40, 0, Math.PI * 2);
+  ctx.arc(240, 100, 50, 0, Math.PI * 2);
+  ctx.arc(280, 100, 40, 0, Math.PI * 2);
+  ctx.arc(240, 80, 40, 0, Math.PI * 2);
+  ctx.fill();
+
+  
+   ctx.fillStyle = "#8B4513";
+  ctx.fillRect(100, 300, 50, 200);
+  ctx.fillStyle = "#228B22"; 
+  ctx.beginPath();
+  ctx.arc(125, 200, 100, 0, Math.PI * 2);
+  ctx.fill();
+  
+
+  ctx.fillStyle = "#000000"; 
+  ctx.beginPath();
+  ctx.moveTo(500, 100);
+  ctx.lineTo(480, 80);
+  ctx.lineTo(490, 70);
+  ctx.lineTo(500, 80);
+  ctx.closePath();
+  ctx.fill();
+  
+  ctx.beginPath();
+  ctx.moveTo(530, 120);
+  ctx.lineTo(510, 100);
+  ctx.lineTo(520, 90);
+  ctx.lineTo(530, 100);
+  ctx.closePath();
+  ctx.fill();
+</script>
+</body>
+</html>
