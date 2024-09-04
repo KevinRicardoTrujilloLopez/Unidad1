@@ -1,0 +1,216 @@
+<head>
+    <style>
+        canvas {
+            background-color: white;
+        }
+
+        body {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <center>
+        <canvas width="500" height="500" id="myCanvas"></canvas>
+    </center>
+
+    <script>
+
+
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+        var fig = true;
+        var x = 225, y = 225, dir = 0, speed = 10;
+        var tx = 0, ty = 0;
+        var wx = 250, wy = 350;
+        let walls=[];
+        let Score=0;
+        let pause = false;
+
+
+
+        class rectangulo{
+            constructor(x,y,w,h,c){
+                this.x = x;
+                this.y = y;
+                this.w = w;
+                this.h = h;
+               this.c = c;
+            }
+            paint(ctx){
+                ctx.fillStyle = this.c;
+                ctx.fillRect(this.x,this.y, this.w, this.h);
+              ctx.strokeRect(this.x,this.y, this.w, this.h);
+            }
+        }
+        
+
+
+
+        const player = new rectangulo(225,225,50,50,"black");
+        const Target = new rectangulo(randomInteger(460),randomInteger(460),20,20,"black");
+
+        walls.push( new rectangulo(160,170,320,30,"gray"));
+        walls.push( new rectangulo(10,50,320,30,"gray"));
+        walls.push( new rectangulo(40,370,320,30,"gray"));
+        
+       
+        window.requestAnimationFrame = (function () {
+            return window.requestAnimationFrame ||
+                window.webkitRequestAnimationFrame ||
+                window.mozRequestAnimationFrame ||
+                function (callback) {
+                    window.setTimeout(callback, 17);
+                };
+        }());
+
+        document.addEventListener("keydown", (e) => {
+
+            switch (e.keyCode) {
+                case 87:
+                    dir = 1; 
+                    pause=false;
+                    break;
+                case 83:
+                    dir = 2;
+                    pause=false;
+                    break;
+                case 68:
+                    dir = 3; 
+                    pause=false;
+                    break;
+                case 65:
+                    dir = 4;
+                    pause=false; 
+                    break;
+                case 32:
+                    speed += 10;
+                    break;
+                case 80:
+                    pause=!pause;
+                    break;
+            }
+
+        })
+
+        function update() {
+            if (!pause) { 
+   
+
+           
+
+            if (dir == 1) {
+                 player.y -= speed;
+                if (player.y + 50 < 0) {
+                    player.y = 550;
+                             }
+                                }
+                if (dir == 2) {
+                   player.y += speed;
+                   if (player.y + 50 > 500) {
+                       player.y = -50;
+                   }
+               }
+               if (dir == 3) {
+                   player.x += speed;
+                   if (player.x + 50 > 500) {
+                       player.x = -50;
+                   }
+               }
+               if (dir == 4) {
+                   player.x -= speed;
+                   if (player.x + 50 < 0) {
+                       player.x = 550;
+                   }
+               }
+
+
+            if (player.x < Target.x + 20 &&
+
+                player.x + 50 > Target.x &&
+
+                player.y < Target.y + 20 &&
+
+                player.y + 50 > Target.y) {
+                Target.x = randomInteger(500);
+                Target.y = randomInteger(500);
+                Score+=10;
+            }
+
+            for (var i = 0; i < walls.length; i++) {
+        var wall = walls[i];
+
+        if (
+            player.x < wall.x + wall.w &&
+            player.x + player.w > wall.x &&
+            player.y < wall.y + wall.h &&
+            player.y + player.h > wall.y
+        ) {
+            if (dir == 1) {
+                player.y += speed;
+            }
+            if (dir == 2) {
+                player.y -= speed;
+            }
+            if (dir == 3) {
+                player.x -= speed;
+            }
+            if (dir == 4) {
+                player.x += speed;
+            }
+        }
+    
+                } 
+            
+
+            
+
+
+
+            paint();
+        }
+            ctx.font="20px Arial"
+            ctx.fillStyle = "black";
+    ctx.fillText("Score: " + Score, 10, 20);
+    if (pause) { 
+        ctx.font="40px Arial"
+        ctx.fillStyle = "black";
+        ctx.fillText("P A U S E", 170, 240);
+    }
+            window.requestAnimationFrame(update);
+        
+    }
+     
+        function paint() {
+            ctx.fillStyle = "white";
+            ctx.fillRect(0, 0, 500, 500);
+            
+            player.c = randomRgbColor();
+            player.paint(ctx);
+            Target.paint(ctx)
+            
+            for (var i = 0; i < walls.length; i++) { 
+        walls[i].paint(ctx); 
+                 }
+                    }
+
+                   
+         
+
+        update();
+
+        function randomRgbColor() {
+            let r = randomInteger(255);
+            let g = randomInteger(255);
+            let b = randomInteger(255);
+            return "rgba(" + r + "," + g + "," + b + ",0.5)";
+        }
+        function randomInteger(max) {
+            return Math.floor(Math.random() * (max + 1));
+        } 
+    </script>
+</body>
+
+</html>
